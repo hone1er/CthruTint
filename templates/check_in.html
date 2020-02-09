@@ -7,28 +7,34 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href='{{url_for("static", filename="style/cthruCSS.css")}}'>
      
-    <title>Document</title>
+    <title>C-Thru Check-in</title>
 </head>
 
 <body>
+   
     <div id="logo-div">
+        <a href="https://cthruwindowtinting.com/" target="_blank">
         <img id="logo" src='{{url_for("static", filename="image/main-logo.png")}}' alt="">
+    </a>
     </div>
+    <div id="head">
+    <div id="title-div">
     <h1 class='title' id='title'>Automotive Window Tinting</h1>
-    <h1 class='title' id='check-in'>Check In Sheet</h1>
-  
+    <h1 class='title' id='check-in'>Check In</h1>
+</div>
+</div>
     <form id='survey-form' action="form_submit" method="POST">
-        <label for="name" id='name-label'>Name:</label>
-        <input type='text' id='name' name='name' required placeholder='Enter your name'>
+        <label for="name" id='name-label'>Name<span class="req">*</span></label>
+        <input type='text' id='name' name='name' autocomplete="no" autofocus required>
         
-        <label for="address" id='address-label'>Address:</label>
-        <input type='text' id='address' name='address' required placeholder='Enter your address'>
+        <label for="address" id='address-label'>Address<span class="req">*</span></label>
+        <input type='text' id='address' name='address' autocomplete="no" required>
 
-        <label for="city" id='city-label'>City:</label>
-        <input type='text' id='city' name='city' required placeholder='Enter the City'>
+        <label for="city" id='city-label'>City<span class="req">*</span></label>
+        <input type='text' id='city' name='city' autocomplete="no" required>
 
         <!--  -->
-        <label for="state">State:</label>
+        <label for="state">State<span class="req">*</span></label>
         <select id="state" name="state">
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
@@ -85,11 +91,11 @@
 
 
         <!--  -->
-        <label for="phone" id='phone-label'>Phone:</label>
-        <input type="tel" name="phone" required placeholder="XXX-XXX-XXXX">
+        <label for="phone" id='phone-label'>Phone<span class="req">*</span></label>
+        <input type="tel" name="phone" autocomplete="no" required placeholder="XXX-XXX-XXXX">
 
-        <label for="email" id='email-label'>Email:</label>
-        <input type='email' id='email' required placeholder='Enter your Email'>
+        <label for="email" id='email-label'>Email</label>
+        <input type='email' id='email' autocomplete="no">
 
         <label for="radios" id='radio-label'>Were You Referred By Someone?</label>
         
@@ -101,20 +107,20 @@
         <!-- Referral block. Display is changed to 'block'/'none' upon the 'Yes'/'No' radio button being clicked via 'referred()'/'noReferred()' -->
         <div id="referred-block" style='display: none;'>
         <label for="referred-by" id='referred-by-label'>Who Referred You?</label>
-        <input type='text' name='referred_by' id='referred-by'>
+        <input type='text' name='referred_by' id='referred-by' autocomplete="no">
         </div>
         <!-- End -->
         
-        <div>
+        <div class="radios">
             <input type='radio' id='no-referred' name='referred' value='no' checked>
             <label for='b'>No</label>
         </div>
 
         
-        <label for="images" id='images-label'>Upload Photos:</label>
+        <label for="images" id='images-label'>Upload Photos</label>
         <input id='images' type="file" accept="image/*" capture="camera" multiple>
 
-        <label for="year" id='year-label'>Year:</label>
+        <label for="year" id='year-label'>Year<span class="req">*</span></label>
         
         
 <!--  -->
@@ -239,20 +245,20 @@
         <!--  -->
 
 
-        <label for="make" id='make-label'>Make:</label>
-        <input type='text' id='make' name="make" required placeholder='Enter your make'>
+        <label for="make" id='make-label'>Make<span class="req">*</span></label>
+        <input type='text' id='make' name="make" autocomplete="no" required >
 
-        <label for="model" id='model-label'>Model:</label>
-        <input type='text' id='model' name="model" required placeholder='Enter your model'>
+        <label for="model" id='model-label'>Model<span class="req">*</span></label>
+        <input type='text' id='model' name="model" autocomplete="no" required>
 
-        <label for="license" id='license-label'>License:</label>
-        <input type='text' id='license' name="license" required placeholder='Enter your license #'>
+        <label for="license" id='license-label'>License<span class="req">*</span></label>
+        <input type='text' id='license' name="license" autocomplete="no" required>
 
-        <label for="vin" id='vin-label'>VIN:</label>
-        <input type='text' id='vin' name="vin" required placeholder='Enter the VIN'>
+        <label for="vin" id='vin-label'>VIN<span class="req">*</span></label>
+        <input type='text' id='vin' name="vin" autocomplete="no" required>
 
-        <label for="film" id='film-label'>Type of Film:</label>
-        <input type='text' id='film' name="film" required placeholder='Enter film type'>
+        <label for="film" id='film-label'>Type of Film<span class="req">*</span></label>
+        <input type='text' id='film' name="film" autocomplete="no" required>
         <span>(Note: Only legal films can be applied)</span>
         
         <hr><hr>
@@ -266,7 +272,7 @@
                     <label for='yes-removal'>Yes</label>
                 </div>
 
-                <div>
+                <div class="radios">
                     <input type='radio' id='no-removal' name='removal' value='no' checked>
                     <label for='no-removal'>No</label>
                 </div>
@@ -283,7 +289,7 @@
                 <label for='yes-complete'>Yes</label>
             </div>
 
-            <div>
+            <div class="radios">
                 <input type='radio' id='no-complete' name='complete' value='no' checked>
                 <label for='no-complete'>No</label>
             </div>
@@ -300,7 +306,7 @@
                 <label for='yes-frontstrip'>Yes</label>
             </div>
 
-            <div>
+            <div class="radios">
                 <input type='radio' id='no-frontstrip' name='frontstrip' value='no' checked>
                 <label for='no-frontstrip'>No</label>
             </div>
@@ -317,7 +323,7 @@
                     <label for='yes-windshield'>Yes</label>
                 </div>
 
-                <div>
+                <div class="radios">
                     <input type='radio' id='no-windshield' name='windshield' value='no' checked>
                     <label for='no-windshield'>No</label>
                 </div>
@@ -326,12 +332,15 @@
 
             </div>
         </div>
-        
+
+        <hr><hr>
+
         <label for="text-area">Special Insructions:</label>
         <textarea id="special-instructions" name="special_instructions"></textarea>
+        <hr>
         <button type='submit' id='submit'>SUBMIT</button>
     </form>
-<script src="{{url_for("static", filename="js/app.js")}}"></script>
+<script src='{{url_for("static", filename="js/app.js")}}'></script>
 </body>
 
 </html>

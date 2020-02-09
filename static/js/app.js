@@ -1,4 +1,4 @@
-
+// Event listeners for customer referred Yes/No. 
 document.getElementById("yes-referred").addEventListener("click", referred);
 document.getElementById("no-referred").addEventListener("click", notReferred);
 
