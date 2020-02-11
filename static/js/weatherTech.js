@@ -30,4 +30,3 @@ function removePart() {
 document.getElementById('part-add').addEventListener('click', addPart);
 // attach onclick event handler to 1st remove button
 document.getElementById('remove').addEventListener('click', removePart);
-

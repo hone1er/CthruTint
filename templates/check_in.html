@@ -7,6 +7,8 @@
 
     {% block form %}
     <form id='survey-form' action="form_submit" method="POST">
+        <!-- Prevent implicit submission of the form -->
+        <button type="submit" disabled style="display: none" aria-hidden="true"></button>
         <label for="name" id='name-label'>Name<span class="req">*</span></label>
         <input class="input" type='text' id='name' name='name' autocomplete="no" autofocus required>
         

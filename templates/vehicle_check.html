@@ -1,12 +1,14 @@
 {% extends "layout.html" %}
-{% block title %}<title>C-Thru Check-in</title>{% endblock %}
+{% block title %}<title>Vehicle Check</title>{% endblock %}
     {% block head %}
     <h1 class='title check-title' id='title'>Automotive Window Tinting</h1>
     <h1 class='title check-title' id='check-in'>Vehicle Inspection</h1>
     {% endblock %}
 
     {% block form %}
-    <form id='survey-form' action="form_submit" method="POST">
+    <form id='survey-form' action="vehicle_check" method="POST">
+        <!-- Prevent implicit submission of the form -->
+        <button type="submit" disabled style="display: none" aria-hidden="true"></button>
         <h1 id="photos">Upload Photos</h1>
         <label for="images" class='images-label'>Front</label>
         <div class="image-div">
@@ -179,13 +181,13 @@
             <div class="removal">
         
                 <div class="radios" id='removal-radios'>
-                    <input type='radio' id='yes-removal' name='removal' value='yes'>
-                    <label class="input" for='yes-removal'>Yes</label>
+                    <input class="input" type='radio' id='yes-removal' name='removal' value='yes'>
+                    <label for='yes-removal'>Yes</label>
                 </div>
 
                 <div class="radios">
-                    <input type='radio' id='no-removal' name='removal' value='no' checked>
-                    <label class="input" for='no-removal'>No</label>
+                    <input class="input" type='radio' id='no-removal' name='removal' value='no' checked>
+                    <label for='no-removal'>No</label>
                 </div>
 
                 <textarea class='radio-text-area' id="removal-text" name="removal_text"></textarea>

@@ -7,6 +7,8 @@
 
 {% block form %}
 <form id="weather-form" action="" method="post">
+<!-- Prevent implicit submission of the form -->
+<button type="submit" disabled style="display: none" aria-hidden="true"></button>
 <div id="outer-info-div">
         <div id="info-div">
         <div class="info-divs" id="cust-info">
