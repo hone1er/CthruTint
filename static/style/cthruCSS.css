@@ -46,6 +46,8 @@ body {
     margin: 0;
     padding: 5px;
     color: var(--white);
+    justify-self: center;
+    align-self: center;
   }
 
   #check-in {
@@ -57,6 +59,10 @@ body {
     margin: 20px;
     padding: 10px;
   }
+
+  #note {
+    margin-left: 10px;
+  }
   #survey-form {
     display: flex;
     flex-direction: column;
@@ -66,17 +72,51 @@ body {
   #submit {
     margin: 10px;
     padding: 25px;
-    background-color: #316abf;
+    background-color: var(--blue);
     color: var(--white);
     font-size: 24px;
     font-weight: bold;
+    cursor: pointer;
   }
 
   #special-instructions {
     height: 100px;
   }
 
-  input, select, option {
+  #tech {
+    color: var(--red);
+    font-weight: 800;
+  }
+
+  #check-in {
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: var(--white);
+    font-weight: 700;
+    letter-spacing: .15rem;
+  }
+
+  .check-title {
+     position: relative;
+     top: 10px;
+  }
+
+  #order-form {
+    font-family: 'Allerta Stencil', sans-serif;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: var(--white);
+    font-weight: 700;
+    letter-spacing: .2rem;
+  }
+
+  #registered {
+    font-size: small;
+    position: relative;
+    bottom: 20px;
+  }
+
+  .input, select, option {
     margin: 17px;
     padding: 5px;
     line-height: 2;
@@ -87,7 +127,7 @@ body {
     font-weight: 600;
   }
 
-  label {
+  label, #photos {
     color: var(--blue);
     text-transform: uppercase;
     line-height: 1.3;
@@ -135,3 +175,165 @@ body {
   }
   #submit:hover { background-color:red; }
   
+
+  /* BEGIN CSS FOR WEATHERTECH.HTML */
+
+  #info-div {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    width: 100%;
+    
+  }
+
+  #cust-info {
+    align-self: start;
+    justify-self: start;
+  }
+
+  #vehicle-info {
+    align-self: end;
+    justify-self: end;
+  }
+
+  #cust-info, #vehicle-info {
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .headers {
+    text-transform: capitalize;
+  }
+
+  .info-divs {
+    padding: 25px;
+    margin: 5vw;
+    border: #000 2px solid;
+    width: 35vw;
+    height: 400px;
+  }
+
+  #info-needed {
+    font-weight: 600;
+    font-size: .9rem;
+  }
+
+  #outer-info-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #part-add {
+    border: #000 2px solid;
+    width: 105px;
+    height: 35px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    align-self: center;
+    background-color: #FFC723;
+  }
+
+  .remove {
+    cursor: pointer;
+    color: var(--red);
+    font-weight: 900;
+    padding: 4px;
+    margin: 1px;
+  }
+
+  .part-add-div {
+    align-self: center;
+    text-transform: capitalize;
+    color: #000;
+    background-color: #FFC723;
+    font-weight: 600;
+  }
+
+  #part-add:active, .part-add-div{
+      background: #e5e5e5;
+      -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+         -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+              box-shadow: inset 0px 0px 5px #c1c1c1;
+       outline: none;
+    }
+  
+
+  #parts-des {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #000000a6;
+  }
+
+
+  .image-div {
+    position:relative;
+    display:inline-block;    
+    border-radius:8px;
+    border:#ebebeb solid 1px;
+    width:250px; 
+    padding: 4px 6px 4px 8px;
+    font: normal 14px Myriad Pro, Verdana, Geneva, sans-serif;
+    color: #7f7f7f;
+    margin-top: 2px;
+    background:white;
+    align-self: center;
+    margin-bottom: 22px;
+  }
+
+  .images-label {
+    background-color: #FFC723;
+    text-align: center;
+  }
+
+
+  @media only screen and (max-width: 768px) {
+    #survey-form {
+      width: 68vw;
+    }
+    #logo {
+      width: 110px;
+      margin: 0 25px 50px 0;
+    }
+  }
+
+  @media only screen and (max-width: 710px) {
+    #logo-div {
+      right: 0;
+    }
+    #logo {
+      margin: 0 25px 150px 0;
+    }
+
+    #info-div {
+      flex-direction: column; 
+    }
+    #weather-form {
+      width: 100%;
+    }
+    #cust-info, #vehicle-info {
+      width: 68vw;
+      align-self: center;
+      justify-self: center;
+    }
+  }
+
+  @media only screen and (max-width: 496px) {
+    #survey-form {
+      width: 85vw;
+    }
+    #cust-info, #vehicle-info {
+      width: 85vw;
+    }
+    .title {
+      font-size: 5vw;
+    }
+
+    #title {
+      font-size: 6vw;
+    }
+  }

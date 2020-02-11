@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href='{{url_for("static", filename="style/cthruCSS.css")}}'>
+    <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Fahkwang&display=swap" rel="stylesheet"> 
+    {% block title %}{% endblock %}
+</head>
+
+<body>
+   
+    <div id="logo-div">
+        <a href="https://cthruwindowtinting.com/" target="_blank">
+        <img id="logo" src='{{url_for("static", filename="image/main-logo.png")}}' alt="">
+    </a>
+    </div>
+    <div id="head">
+        <div id="title-div">
+            
+            {% block head %}{% endblock %}
+        </div>
+    </div>
+
+    {% block form %}
+    {% endblock %}
+    {% block script %}
+
+{% endblock %}
+</body>
+
+</html>
