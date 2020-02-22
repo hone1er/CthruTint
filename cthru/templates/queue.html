@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block meta %}<meta http-equiv="refresh" content="300"/>{% endblock %}
+{% block title %}<title>Customers</title>{% endblock %}
+    {% block head %}
+    <h1 class='title check-title' id='title'>Automotive Window Tinting</h1>
+    <h1 class='title check-title' id='check-in'>Check-in</h1>
+    {% endblock %}
+
+    {% block form %}
+    <form action="vehicle_inspection" method="POST">
+    <div id="customer-div">
+        <h1>Queue</h1>
+        {% for cust in queue %}
+        <div id="indi-div">
+            <button class="client-button" name="customer" value="{{ cust.client }}">{{ cust.client }}</button>
+    </div>
+    {% endfor %}
+        <!-- /#indi-div -->
+    </div>
+    <!-- /#customer-div -->
+    </form>
+    {% endblock %}
+
+    {% block script %}
+<script src='{{url_for("static", filename="js/app.js")}}'></script>
+{% endblock %}

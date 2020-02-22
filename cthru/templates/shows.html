@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}<title>C-Thru Window Tinting</title>{% endblock %}
+{% block head %}
+<h1 class='title check-title' id='title'>CThru Window Tinting</h1>
+{% endblock %}
+
+{% block form %}
+<form id='survey-form' action="show_submit" method="POST">
+    <!-- Prevent implicit submission of the form -->
+    <button type="submit" disabled style="display: none" aria-hidden="true"></button>
+    <label for="name" id='name-label'>Name<span class="req">*</span></label>
+    <input class="input" type='text' id='name' name='client' autocomplete="no" autofocus required>
+
+    <!--  -->
+    <label for="phone" id='phone-label'>Phone<span class="req">*</span></label>
+    <input class="input" type="tel" name="phone" autocomplete="no" required placeholder="XXX-XXX-XXXX">
+
+    <label for="email" id='email-label'>Email</label>
+    <input class="input" type='email' id='email' autocomplete="no">
+
+    <h1>I'd like to learn more about:
+    </h1>
+
+    <div class="checkboxes">
+        <div class="row">
+        <div class="indi-checkbox">
+            <input type="checkbox" id="residential" name="residential">
+            <label for="residential">Residential tinting/graphics</label>
+        </div>
+        <div class="indi-checkbox">
+            <input type="checkbox" id="commercial" name="commercial">
+            <label for="commercial">commercial tinting/graphics</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="indi-checkbox">
+            <input type="checkbox" id="automotive" name="automotive">
+            <label for="automotive">Automotive tinting</label>
+        </div>
+        <div class="indi-checkbox">
+            <input type="checkbox" id="weather-tech" name="weather-tech">
+            <label for="weather-tech">Weather tech accessories</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="indi-checkbox">
+            <input type="checkbox" id="wet-okole" name="wet-okole">
+            <label for="wet-okole">Wet okole seat covers</label>
+        </div>
+    </div>
+    </div>
+    <button onClick="confSubmit(this.form);" type='submit' id='submit'>SUBMIT</button>
+</form>
+{% endblock %}
+
+{% block script %}
+<script src='{{url_for("static", filename="js/app.js")}}'></script>
+{% endblock %}
